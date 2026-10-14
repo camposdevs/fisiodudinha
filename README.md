@@ -8,6 +8,6 @@ Site de apresentação (portfólio) de uma estudante de Fisioterapia, com quem e
 
 <br>
 
-[![Portfólio](https://img.shields.io/badge/🌐_Portfólio-0f172a?style=for-the-badge)](https://portfoliodevcampos.netlify.app/)
+[![Ver site](https://img.shields.io/badge/🌐_Ver_site-2f628a?style=for-the-badge)](https://fisiodudinha.netlify.app/)
 
 </div>

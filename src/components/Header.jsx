@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header>
       <div className="wrap nav">
-        <a href="#topo" className="logo"><b>D</b>Dudinha</a>
+        <a href="#topo" className="logo"><b aria-hidden="true">D</b>Dudinha</a>
         <nav aria-label="Principal">
           <ul>
             {links.map(([href, label]) => (

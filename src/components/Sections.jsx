@@ -4,11 +4,11 @@ import { photos, profile, journey, experiences, feed, values, notice } from "../
 
 const ext = { target: "_blank", rel: "noopener noreferrer" };
 
-function Photo({ src, alt, label }) {
+function Photo({ src, alt, label, eager = false }) {
   return (
     <div className="photo" role={src ? undefined : "img"} aria-label={src ? undefined : alt}>
       {src ? (
-        <img src={src} alt={alt} />
+        <img src={src} alt={alt} decoding="async" loading={eager ? "eager" : "lazy"} />
       ) : (
         <div><Icon name="user" /><small>{label}</small></div>
       )}
@@ -32,7 +32,7 @@ export function Hero() {
       <div className="wrap g">
         <div className="rv">
           <span className="pill"><Icon name="heart" filled /> Estudante de Fisioterapia</span>
-          <h1>Oi, eu sou a <em>Dudinha</em>. Estou aprendendo a cuidar de gente.</h1>
+          <h1>Oi, eu sou a <span className="nm">Dudinha</span>. Estou aprendendo a cuidar de gente.</h1>
           <p className="lead">
             Compartilho minha rotina, meus estudos e os aprendizados da faculdade enquanto me preparo
             para ser uma fisioterapeuta que escuta, cuida e faz a diferença.
@@ -43,7 +43,7 @@ export function Hero() {
           </div>
         </div>
         <div className="visual rv">
-          <Photo src={photos.hero} alt="Dudinha de jaleco na aula prática" label="Foto da Dudinha de jaleco" />
+          <Photo eager src={photos.hero} alt="Dudinha de jaleco na aula prática" label="Foto da Dudinha de jaleco" />
           <div className="float f1"><i><Icon name="book" /></i><div>Sempre aprendendo<small>Rotina e aprendizados</small></div></div>
           <div className="float f2"><i><Icon name="heart" /></i><div>Futura fisioterapeuta<small>Cuidado com propósito</small></div></div>
         </div>
@@ -148,7 +148,7 @@ export function Contact() {
           <h2>Vamos trocar uma ideia?</h2>
           <p>Quer falar sobre faculdade, estudos ou fisioterapia? Me chama no Instagram ou no WhatsApp.</p>
           <div className="actions">
-            <a className="btn lg" href={whatsappLink} {...ext}><Icon name="wa" filled /> Chamar no WhatsApp</a>
+            {whatsappLink && <a className="btn lg" href={whatsappLink} {...ext}><Icon name="wa" filled /> Chamar no WhatsApp</a>}
             <a className="btn lg ghost" href={INSTAGRAM} {...ext}><Icon name="ig" /> Instagram</a>
           </div>
         </div>

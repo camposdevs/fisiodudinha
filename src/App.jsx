@@ -29,7 +29,7 @@ export default function App() {
     <>
       <a className="skip" href="#topo">Pular para o conteúdo</a>
       <Header />
-      <main id="topo">
+      <main id="topo" tabIndex={-1}>
         <Hero />
         <About />
         <Journey />

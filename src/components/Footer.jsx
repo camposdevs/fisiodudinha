@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <div className="logo"><b>D</b>Dudinha</div>
+        <div className="logo"><b aria-hidden="true">D</b>Dudinha</div>
         <p>Estudante de Fisioterapia · <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">@fisiodudinha</a></p>
         <p>© {new Date().getFullYear()} Dudinha. Todos os direitos reservados.</p>
       </div>
